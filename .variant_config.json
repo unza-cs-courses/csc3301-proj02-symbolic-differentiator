@@ -1,0 +1,63 @@
+{
+  "student_id": "differentiator",
+  "variant_seed": 1242785592,
+  "trigonometric_functions": {
+    "required": [
+      "cos",
+      "sin",
+      "tan"
+    ],
+    "count": 3,
+    "derivative_rules": {
+      "cos": "d/dx[cos(u)] = -sin(u) * u'",
+      "sin": "d/dx[sin(u)] = cos(u) * u'",
+      "tan": "d/dx[tan(u)] = sec^2(u) * u'"
+    }
+  },
+  "test_parameters": {
+    "polynomial_coefficients": [
+      7,
+      4,
+      5
+    ],
+    "power_base": 4,
+    "power_exponent": 2
+  },
+  "test_expressions": [
+    {
+      "expr": "'(+ (* 7 (^ x 2)) (* 4 x) 5)",
+      "description": "7x^2 + 4x + 5",
+      "type": "polynomial"
+    },
+    {
+      "expr": "'(^ x 2)",
+      "description": "x^2",
+      "type": "power"
+    },
+    {
+      "expr": "'(* 3 (^ x 2))",
+      "description": "3 * x^2",
+      "type": "product"
+    },
+    {
+      "expr": "'(cos x)",
+      "description": "cos(x)",
+      "type": "trigonometric"
+    },
+    {
+      "expr": "'(sin x)",
+      "description": "sin(x)",
+      "type": "trigonometric"
+    },
+    {
+      "expr": "'(tan (* 3 x))",
+      "description": "tan(3x)",
+      "type": "chain_rule"
+    }
+  ],
+  "simplification_requirements": {
+    "zero_elimination": true,
+    "identity_simplification": true,
+    "constant_folding": true
+  }
+}
