@@ -35,9 +35,7 @@ jobs:
 
     - name: Install Racket (for validation)
       run: |
-        sudo add-apt-repository ppa:plt/racket -y
-        sudo apt-get update
-        sudo apt-get install -y racket
+        sudo snap install racket --classic
 
     - name: Check if variant already exists
       id: check_variant
