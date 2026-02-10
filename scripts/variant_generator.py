@@ -146,7 +146,7 @@ def generate_test_file(variant: dict, repo_root: Path):
 ;;; Required trigonometric functions: {", ".join(trig_funcs)}
 
 (require rackunit)
-(require "../src/differentiator.rkt")
+(require "../../src/differentiator.rkt")
 
 ;;; Basic derivative tests
 (define basic-tests
