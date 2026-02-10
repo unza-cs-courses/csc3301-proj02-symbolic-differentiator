@@ -7,6 +7,59 @@
 
 Implement a symbolic differentiation system in Scheme that computes derivatives of mathematical expressions symbolically (not numerically) and simplifies the results.
 
+## Environment Setup
+
+### Installing Racket
+
+#### macOS
+```bash
+brew install --cask racket
+```
+
+#### Ubuntu/Debian
+```bash
+sudo apt install racket
+```
+
+#### Windows
+Download the installer from [racket-lang.org](https://download.racket-lang.org/) and follow the installation wizard.
+
+### Verify Installation
+
+```bash
+racket --version
+```
+
+You should see output like: `Welcome to Racket v8.x.x`
+
+### Running Tests
+
+Run all tests in the `tests/visible/` directory:
+```bash
+raco test tests/visible/test_differentiator.rkt
+```
+
+Or run tests for the entire `src/` directory:
+```bash
+raco test src/
+```
+
+### Interactive Development
+
+Start the Racket REPL:
+```bash
+racket
+```
+
+Or use DrRacket (the integrated IDE) for a graphical environment:
+```bash
+drracket
+```
+
+### Testing Framework
+
+This project uses **rackunit**, a unit testing framework that comes built-in with Racket. No additional installation is needed. Tests are automatically discovered and executed with `raco test`.
+
 ## Variant System
 
 This assignment uses a **variant-based system** to generate unique requirements for each student. When your repository is created via GitHub Classroom, a GitHub Action automatically generates:
@@ -58,14 +111,14 @@ cat ASSIGNMENT.md
 ```scheme
 '(+ x 3)           ; x + 3
 '(* 2 x)           ; 2 * x
-'(^ x 3)           ; x^3
+'(** x 3)          ; x^3
 '(sin (* 2 x))     ; sin(2x)
 ```
 
 ## Example
 
 ```scheme
-(deriv '(^ x 3) 'x)  ; Returns '(* 3 (^ x 2))
+(deriv '(** x 3) 'x)  ; Returns '(* 3 (** x 2))
 ```
 
 ## Running Tests

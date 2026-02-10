@@ -1,12 +1,18 @@
 #lang racket
-(provide deriv simplify)
+(provide deriv simplify
+         ;; Expression predicates
+         variable? same-variable? sum? product? power?
+         ;; Selectors
+         addend augend multiplier multiplicand
+         ;; Constructors
+         make-sum make-product)
 
 ;;; Expression predicates
 (define (variable? e) (symbol? e))
 (define (same-variable? v1 v2) (and (variable? v1) (variable? v2) (eq? v1 v2)))
 (define (sum? e) (and (pair? e) (eq? (car e) '+)))
 (define (product? e) (and (pair? e) (eq? (car e) '*)))
-(define (power? e) (and (pair? e) (eq? (car e) '^)))
+(define (power? e) (and (pair? e) (eq? (car e) '**)))
 
 ;;; Selectors
 (define (addend e) (cadr e))
